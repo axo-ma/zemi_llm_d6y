@@ -26,7 +26,7 @@ https://github.com/winpython/winpython/releases/download/16.6.20250620final/Winp
 
 3. Unpack Winpython64-3.12.10.1slim.7z to any suitable folder on your machine, for example:
 ```
-mkdir -p %OME%\zemi_llm
+mkdir "%OME%\zemi_llm"
 ```
 4. Unpack Winpython64-3.12.10.1slim.7z using 7-Zip to
 ```
@@ -40,7 +40,7 @@ You can list available models using python
 
 Run 
 ```bash
-%OME%\zemi_llm\WPy64-312101\WinPython Command Prompt.exe"
+"%OME%\zemi_llm\WPy64-312101\WinPython Command Prompt.exe"
 ```
 In winpython terminal run
 ```bash
