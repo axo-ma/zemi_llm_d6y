@@ -1,0 +1,24 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: zemi_llm_d6y_ollama
+    restart: always
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+    volumes:
+      - ./user_work:/root/.ollama
+    ports:
+      - "0.0.0.0:11434:11434"
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: zemi_llm_d6y_openwebui
+    restart: always
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    volumes:
+      - ./user_data:/app/backend/data
+    ports:
+      - "0.0.0.0:3000:8080"
